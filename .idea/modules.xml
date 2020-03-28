@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/bb-billing-service/bb-billing-service.iml" filepath="$PROJECT_DIR$/bb-billing-service/bb-billing-service.iml" />
+      <module fileurl="file://$PROJECT_DIR$/bb-customer-service/bb-customer-service.iml" filepath="$PROJECT_DIR$/bb-customer-service/bb-customer-service.iml" />
+      <module fileurl="file://$PROJECT_DIR$/bb-frontend-service/bb-frontend-service.iml" filepath="$PROJECT_DIR$/bb-frontend-service/bb-frontend-service.iml" />
+      <module fileurl="file://$PROJECT_DIR$/bb-menu-service/bb-menu-service.iml" filepath="$PROJECT_DIR$/bb-menu-service/bb-menu-service.iml" />
+      <module fileurl="file://$PROJECT_DIR$/bb-user-service/bb-user-service.iml" filepath="$PROJECT_DIR$/bb-user-service/bb-user-service.iml" />
+    </modules>
+  </component>
+</project>

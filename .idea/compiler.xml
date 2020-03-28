@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="bb-menu-service" />
+        <module name="bb-billing-service" />
+        <module name="bb-user-service" />
+        <module name="bb-frontend-service" />
+        <module name="bb-customer-service" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="bb-billing-service" target="1.8" />
+      <module name="bb-customer-service" target="1.8" />
+      <module name="bb-frontend-service" target="1.8" />
+      <module name="bb-menu-service" target="1.8" />
+      <module name="bb-user-service" target="1.8" />
+    </bytecodeTargetLevel>
+  </component>
+  <component name="JavacSettings">
+    <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="bb-billing-service" options="-parameters" />
+      <module name="bb-customer-service" options="-parameters" />
+      <module name="bb-frontend-service" options="-parameters" />
+      <module name="bb-menu-service" options="-parameters" />
+      <module name="bb-user-service" options="-parameters" />
+    </option>
+  </component>
+</project>
