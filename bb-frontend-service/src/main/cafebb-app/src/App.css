@@ -1,3 +1,132 @@
+.switch {
+  position: absolute;
+  display: inline-block;
+  width: 30px;
+  height: 10px;
+  left: 535px;
+  padding-left: 0px;
+}
+
+.switch input { 
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0px;
+  right: 0px;
+  bottom: 0;
+  background-color: #ccc;
+  -webkit-transition: .2s;
+  transition: .2s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 17px;
+  bottom: -2.5px;
+  background-color: white;
+  -webkit-transition: .2s;
+  transition: .2s;
+}
+
+input:checked + .slider {
+  background-color: rgb(0, 0, 0);
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px rgb(0, 0, 0);
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(26px);
+  -ms-transform: translateX(26px);
+  transform: translateX(-21px);
+}
+
+/* Rounded sliders */
+.slider.round {
+  border-radius: 50px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+  height: 15px;
+  width: 15px;
+}
+
+
+
+.bttn{
+  padding-top: 2px;
+}
+.menuline{
+  background-color: black;
+  color: '#000000';
+  border-color: black;
+  width: 97%;
+  position: absolute;
+  left: 15px;
+
+}
+.addmenu{
+  position: absolute;
+  left: 30px;
+  width: 10%;
+  margin-top: 50px;
+}
+.addedmenu:hover {
+  -ms-transform: scale(1.5); /* IE 9 */
+  -webkit-transform: scale(1.5); /* Safari 3-8 */
+  transform: scale(1.03); 
+}
+.addedmenu{
+  position: relative;
+  border-radius: 20px;
+  margin-left: 275px;
+  text-align: left;
+  width: 45%;
+  padding-left: 25px;
+  margin-bottom: 10px;
+  background-color:#28A745;
+}
+.menu{
+  position: absolute;
+  left: 30px;
+  width: 10%;
+  background-color: #28A745;
+}
+.menuPlus{
+  display: inline-flex;
+  text-align: left;
+  position: absolute;
+  left: 535px;
+  width: 5%;
+  height: 1px;
+  top: 2px;
+  background-color: #28A745;
+  border-block-start-width: 0px;
+  border-inline-start-width: 0px;
+  border-image-width: 0px;
+
+}
+.footer{
+  position: relative;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  height: 2.5rem;
+  margin-top: 35%;
+  background-color: #222222;
+
+}
 .App {
   text-align: center;
 }
@@ -28,6 +157,8 @@
   color: #61dafb;
 }
 
+
+
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
@@ -36,3 +167,5 @@
     transform: rotate(360deg);
   }
 }
+
+            
