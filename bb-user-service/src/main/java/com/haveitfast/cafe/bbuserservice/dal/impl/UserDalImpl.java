@@ -29,14 +29,14 @@ public class UserDalImpl implements UserDal {
 
     //    ToDo Custom DalException
     @Override
-    public boolean isUserFound(String username, String password) {
+    public String isUserFound(String username, String password) {
         Query query = new Query();
         query.addCriteria(Criteria.where("userName").is(username).andOperator(Criteria.where("password").is(password)));
         UserEntity user = mongoTemplate.findOne(query, UserEntity.class);
         if (user == null) {
-            return false;
+            return null;
         }
-        return true;
+        return user.getUserId();
     }
 
     @Override
@@ -53,6 +53,8 @@ public class UserDalImpl implements UserDal {
     public UserEntity findByUserId(String userId) {
         return mongoTemplate.findById(userId, UserEntity.class);
     }
+    
+
 
     @Override
     public void deleteUser(String userId) {

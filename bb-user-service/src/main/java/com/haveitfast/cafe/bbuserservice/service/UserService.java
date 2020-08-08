@@ -18,7 +18,7 @@ public interface UserService {
 
     public User findUserById(String userId);
 
-    public boolean isUserFound(String username, String password);
+    public String isUserFound(String username, String password);
 
     public User updateUserDetails(String id, User user);
 

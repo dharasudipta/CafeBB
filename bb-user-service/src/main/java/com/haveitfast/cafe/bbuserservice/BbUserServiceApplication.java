@@ -10,6 +10,7 @@ public class BbUserServiceApplication {
 
     public static void main(String[] args) {
         SpringApplication.run(BbUserServiceApplication.class, args);
-    }
+    } 
 
 }
+
