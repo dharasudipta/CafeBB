@@ -20,14 +20,14 @@ class UserService extends Component {
                     <>
                         <HeaderComponent/>
                         <Switch>
-                            <Route path="/" exact component={HomeComponent}/>
+                            <Route path="/" exact component={MenuComponent}/>
                             <Route path="/login" component={LoginComponent}/>
                             <Route path="/signup" component={SignupComponent}/>
                            <AuthenticatedRoute path="/welcome/:name" component={WelcomeComponent}/>
                            <AuthenticatedRoute path="/usersUpdate/:id" component={UserUpdateComponent}/>
                            <AuthenticatedRoute path="/userDetails" component={UserDetailsComponent}/>
                            <AuthenticatedRoute path="/logout" component={LogoutComponent}/>
-                           <AuthenticatedRoute path="/menu" component={MenuComponent}/>
+                           {/* <Route path="/menu" component={MenuComponent}/> */}
                            <Route path="/home" component={HomeComponent}/>
 
                            <Route component={ErrorComponent}/>

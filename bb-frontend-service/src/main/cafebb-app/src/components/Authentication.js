@@ -1,10 +1,10 @@
 import axios from 'axios'
 class Authentication {
-    successfullyLoggedIn(id,fullName,mobile,username,password,role){
+    successfullyLoggedIn(id,fullName,mobile,userName,password,role){
             sessionStorage.setItem('authenticatedUserId',id)   
             sessionStorage.setItem('authenticatedUserFullName',fullName)
            sessionStorage.setItem('authenticatedUserMobile',mobile)
-            sessionStorage.setItem('authenticatedUser',username)
+            sessionStorage.setItem('authenticatedUser',userName)
             sessionStorage.setItem('authenticatedUserPassword',password)
            sessionStorage.setItem('authenticatedUserRole',role)
              this.RequestInterceptor()
@@ -50,13 +50,13 @@ LoggedInUserRole(){
 }
 IsRoleAdmin(){
   let x = sessionStorage.getItem('authenticatedUserRole')
-  if(x==="Admin")
+  if(x==="ADMIN")
    return true
  return false
 }
 IsRoleManager(){
   let x = sessionStorage.getItem('authenticatedUserRole')
-  if(x==="Manager")
+  if(x==="MANAGER")
    return true
  return false
 }

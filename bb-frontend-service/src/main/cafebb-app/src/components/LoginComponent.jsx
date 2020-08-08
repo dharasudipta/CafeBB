@@ -22,12 +22,13 @@ class LoginComponent extends Component {
         
     }
     login(result,res,values){
+        
         if(result.data){
             Authentication.successfullyLoggedIn(
-                res.data.id,
+                res.data.userId,
                 res.data.fullName,
-                res.data.mobile,
-                res.data.username,
+                res.data.contactNumber,
+                res.data.userName,
                 res.data.password,
                 res.data.role
                 )
@@ -45,7 +46,7 @@ class LoginComponent extends Component {
     loginClicked(values) {
         
         UserData.executeGetValidityOfUser(values.username,values.password)
-        .then(result=>UserData.executeGetUserByPassword(values.username,values.password)
+        .then(result=>UserData.executeGetUserById(values.username,result.data)
         .then((res)=>this.login(result,res,values)))
     }
     

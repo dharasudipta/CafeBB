@@ -6,7 +6,7 @@ class UserDetailsComponent extends Component {
     constructor(props) {
         super(props)
         this.state = {
-            users: [],
+            Users: [],
             message: null
         }
         this.deleteUserClicked = this.deleteUserClicked.bind(this)
@@ -21,11 +21,11 @@ class UserDetailsComponent extends Component {
 
     refreshUserDetails() {
         Authentication.RequestInterceptor()
-        let username = Authentication.LoggedInUserName()
-        UserData.executeGetAllUserDetails(username)
+        //let username = Authentication.LoggedInUserName()
+        UserData.executeGetAllUserDetails()
             .then(
                 response => {
-                    this.setState({ users: response.data })
+                    this.setState({ Users: response.data })
                 }
             )
     }
@@ -54,6 +54,7 @@ class UserDetailsComponent extends Component {
     }
 
     render() {
+        console.log( Authentication.LoggedInUserName())
         return(
             <div>
                 <h1>List of Users</h1>
@@ -65,21 +66,25 @@ class UserDetailsComponent extends Component {
                                 {<th>Role</th>}
                                 <th>Name</th>
                                 <th>Mobile Number</th>
+                                <th>Store Id</th>
+                                <th>Employee Id</th>
                                 <th>Update</th>
                                 <th>Delete</th>
                             </tr>
                         </thead>
                         <tbody>
                             {
-                                this.state.users.map(
+                                this.state.Users.map(
                                     user =>
-                                   !( this.equals((user.id).toString()) || "Admin"===user.role ) && 
-                                    <tr key={user.id}>
+                                    !( this.equals((user.userId).toString()) || "ADMIN"===user.role ) && 
+                                    <tr key={user.userId}>
                                     <td>{user.role}</td>
                                     <td>{user.fullName}</td>
-                                    <td>{user.mobile}</td>
-                                    <td>{<button className="btn btn-success" onClick={() => this.updateUserClicked(user.id)}>Update</button>}</td>
-                                    <td>{<button className="btn btn-warning" onClick={() => this.deleteUserClicked(user.id)}>Delete</button>}</td>
+                                    <td>{user.contactNumber}</td>
+                                    <td>{user.storeId}</td>
+                                    <td>{user.employeeId}</td>
+                                    <td>{ <button className="btn btn-success" onClick={() => this.updateUserClicked(user.userId)}>Update</button>}</td>
+                                    <td>{ <button className="btn btn-warning" onClick={() => this.deleteUserClicked(user.userId)}>Delete</button>}</td>
                                 </tr>
                                 )
                             }

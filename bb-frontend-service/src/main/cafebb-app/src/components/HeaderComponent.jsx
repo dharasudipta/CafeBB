@@ -18,10 +18,10 @@ class HeaderComponent extends Component {
         return (
             <header>
                 <nav className="navbar navbar-expand-md navbar-dark bg-dark">
-                    <div><Link className="navbar-brand" to ="/welcome/username" ><h1>CafeBB</h1></Link></div>
+                    <div><Link className="navbar-brand" to ="/" ><h1>CafeBB</h1></Link></div>
                     <ul className="navbar-nav">
                         {isLoggedIn && <li><Link className="nav-link" to="/welcome/username">Home</Link></li>}
-                        {isLoggedIn && <li><Link className="nav-link" to="/menu">Menu</Link></li>}
+                        {/* <li><Link className="nav-link" to="/menu">Menu</Link></li> */}
                         {isLoggedIn && userDetailsHeader && <li><Link className="nav-link" to="/userDetails">User Details</Link></li>}
                     </ul>
                     <ul className="navbar-nav navbar-collapse justify-content-end">

@@ -21,10 +21,12 @@ class SignupComponent extends Component {
         Authentication.RequestInterceptor()
         UserData.executeCreateUser({ 
             fullName:values.fullName,
-            mobile :values.mobile,
-            username: values.username,
+            contactNumber :values.mobile,
+            userName: values.username,
             password: values.password,
-            role :values.role
+            role :values.role,
+            storeId:"test1",
+            employeeId:"test2"
             })
             this.props.history.push(`/login`)
        
@@ -47,7 +49,7 @@ class SignupComponent extends Component {
         else if(!values.role ){
             error.role="Enter Role "
         }
-        else if(values.role!=="Admin" && values.role!=="Staff" && values.role!=="Manager" ){
+        else if(values.role!=="ADMIN" && values.role!=="STAFF" && values.role!=="MANAGER" ){
             error.role="Enter Valid Role "
         }
         return error
@@ -60,7 +62,7 @@ class SignupComponent extends Component {
                <h1>Sign Up</h1>
                <div>
                    <Formik 
-                   initialValues={{ fullName:'',mobile :'',username: '',password: '',role :''}}
+                   initialValues={{ fullName:'',mobile :'',username: '',password: '',role :'',storeId:'',employeeId:''}}
                    onSubmit={this.signUpClicked}
                    validateOnChange={false}
                    validateOnBlur={false}

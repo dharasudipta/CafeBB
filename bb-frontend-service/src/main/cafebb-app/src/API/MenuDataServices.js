@@ -1,30 +1,32 @@
 import axios from 'axios'
 
 class MenuDataServices{
-    executeGetAllMenu(name){
+    executeGetAllMenu(){
         //console.log("Executed")
-        return axios.get(`http://localhost:9002/users/${name}/menus`)
+        return axios.get(`http://localhost:9002/menu/menus`)
     }
-    executeGetMenu(name,id){
+    executeGetMenu(id){
         //console.log("Executed")
-        return axios.get(`http://localhost:9002/users/${name}/menus/${id}`)
+        return axios.get(`http://localhost:9002/menu/menuById/${id}`)
     }
-    executeGetIdCounter(){
+    // executeGetIdCounter(){
+    //     //console.log("Executed")
+    //     return axios.get(`http://localhost:9002/getIdCounter`)
+    // }
+
+    executeGetEnableStatus(id){
         //console.log("Executed")
-        return axios.get(`http://localhost:9002/getIdCounter`)
+        return axios.get(`http://localhost:9002/menu/getEnableStatus/${id}`)
     }
-    executeGetEnableStatus(username,id){
+    executeCreateMenu(menu){
         //console.log("Executed")
-        return axios.get(`http://localhost:9002/users/${username}/menus/${id}/getEnableStatus`)
+        return axios.post(`http://localhost:9002/menu/createMenu`,menu);
     }
-    executeCreateMenu(name,menu){
+    executeEnableStatus(id,menu){
         //console.log("Executed")
-        return axios.post(`http://localhost:9002/users/${name}/menus`,menu);
-    }
-    executeEnableStatus(name,id,menu){
-        //console.log("Executed")
-        return axios.put(`http://localhost:9002/users/${name}/menus/${id}`,menu);
+        return axios.put(`http://localhost:9002/menu/updateMenu/${id}`,menu);
     }
 
 }
  export default new MenuDataServices()
+ 

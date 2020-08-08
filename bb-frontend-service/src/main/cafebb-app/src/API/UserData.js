@@ -1,5 +1,5 @@
 import axios from 'axios'
-
+///user
 class UserData{
     // executeGetAllMenu(name){
     //     //console.log("Executed")
@@ -9,35 +9,35 @@ class UserData{
     
     executeGetUserByPassword(username,password){
         //console.log("Executed")
-        return axios.get(`http://localhost:9003/getUserByPassword/${username}/${password}`);
+        return axios.get(`http://localhost:9003/user/getUserByPassword/${username}/${password}`);
     }
     executeGetUserById(name,id){
         //console.log("Executed")
-        return axios.get(`http://localhost:9003/getUser/${name}/${id}`);
+        return axios.get(`http://localhost:9003/user/getUser/${name}/${id}`);
     }
     executeGetAllUserDetailsExceptThis(name,id){
         //console.log("Executed")
-        return axios.get(`http://localhost:9003/${name}/users/${id}`)
+        return axios.get(`http://localhost:9003/user/${name}/users/${id}`)
     }
-    executeGetAllUserDetails(name){
+    executeGetAllUserDetails(){
         //console.log("Executed")
-        return axios.get(`http://localhost:9003/${name}/users`)
+        return axios.get(`http://localhost:9003/user/users`)
     }
     executeGetValidityOfUser(name,password){
         //console.log("Executed")
-        return axios.get(`http://localhost:9003/users/${name}/user/${password}`);
+        return axios.get(`http://localhost:9003/user/authUsers/${name}/user/${password}`);
     }
-    executeCreateUser(menu){
+    executeCreateUser(user){
         //console.log("Executed")
-        return axios.post(`http://localhost:9003/signup`,menu);
+        return axios.post(`http://localhost:9003/user/signup`,user);
     }
     executeDeleteUser(username,id){
         //console.log("Executed")
-        return axios.delete(`http://localhost:9003/deleteUser/${username}/user/${id}`);
+        return axios.delete(`http://localhost:9003/user/deleteUser/${username}/user/${id}`);
     }
     executeUpdateUser(name,id,user){
         //console.log("Executed")
-        return axios.put(`http://localhost:9003/usersUpdate/${name}/${id}`,user);
+        return axios.put(`http://localhost:9003/user/usersUpdate/${name}/${id}`,user);
     }
     // executeGetIdCounter(){
     //     //console.log("Executed")
