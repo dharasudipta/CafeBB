@@ -49,6 +49,8 @@ public class UserServiceImpl implements UserService {
     public User findUserById(String userId) {
         return assembler.toUser(userDal.findByUserId(userId));
     }
+    
+
 
     public User deleteUser(String userId) {
         User deletedUser = findUserById(userId);
@@ -56,7 +58,7 @@ public class UserServiceImpl implements UserService {
         return deletedUser;
     }
 
-    public boolean isUserFound(String username, String password) {
+    public String isUserFound(String username, String password) {
         return userDal.isUserFound(username, password);
     }
 

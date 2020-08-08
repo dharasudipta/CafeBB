@@ -44,13 +44,9 @@ public class UserResources {
         return userService.findUserById(id);
     }
 
-//    @GetMapping(path = "/getUserByPassword/{username}/{password}")
-//    public User getUserByPassword(@PathVariable String username, @PathVariable String password) {
-//        return userService.findUserByPassword(username, password);
-//    }
 
     @DeleteMapping("/deleteUser/{username}/user/{id}")
-    public ResponseEntity<Void> createUser(@PathVariable String username, @PathVariable String id) {
+    public ResponseEntity<Void> deleteUser(@PathVariable String username, @PathVariable String id) {
         User userDelete = userService.deleteUser(id);
         if (userDelete != null) {
             return ResponseEntity.noContent().build();
@@ -58,8 +54,8 @@ public class UserResources {
         return ResponseEntity.notFound().build();
     }
 
-    @GetMapping(path = "/users/{username}/user/{password}")
-    public boolean userAuthentication(@PathVariable String username, @PathVariable String password) {
+    @GetMapping(path = "/authUsers/{username}/user/{password}")
+    public String userAuthentication(@PathVariable String username, @PathVariable String password) {
         return userService.isUserFound(username, password);
     }
 
