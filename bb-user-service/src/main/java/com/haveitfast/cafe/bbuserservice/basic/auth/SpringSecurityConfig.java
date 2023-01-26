@@ -1,24 +1,20 @@
 package com.haveitfast.cafe.bbuserservice.basic.auth;
 
 import org.springframework.context.annotation.Configuration;
-import org.springframework.http.HttpMethod;
+import org.springframework.security.config.Customizer;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
-import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
+import org.springframework.security.web.SecurityFilterChain;
 
 @Configuration
 @EnableWebSecurity
-public class SpringSecurityConfig extends WebSecurityConfigurerAdapter {
-	@Override
-	protected void configure(HttpSecurity http) throws Exception {
-		
-		http
-		.csrf().disable()
-		.authorizeRequests()
-		.antMatchers(HttpMethod.OPTIONS,"/**").permitAll()
-				.anyRequest().authenticated()
-				.and()
-			//.formLogin().and()
-			.httpBasic();
-	}
+public class SpringSecurityConfig {
+    public SecurityFilterChain configure(HttpSecurity http) throws Exception {
+        return http
+                .authorizeHttpRequests(authorizeHttpRequests -> authorizeHttpRequests.anyRequest().authenticated())
+                .httpBasic(Customizer.withDefaults())
+                .csrf().disable()
+                .headers(headerConfigurer -> headerConfigurer.frameOptions().sameOrigin())//for H2-Console issue
+                .build();
+    }
 }

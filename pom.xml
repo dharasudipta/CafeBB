@@ -16,6 +16,10 @@
 <!--        <module>bb-menu-service</module>-->
 <!--    </modules>-->
 
+    <properties>
+        <spring.version>3.0.1</spring.version>
+    </properties>
+
     <profiles>
         <profile>
             <id>ci</id>

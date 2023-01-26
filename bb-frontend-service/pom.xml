@@ -5,7 +5,7 @@
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
-        <version>2.2.6.RELEASE</version>
+        <version>3.0.1</version>
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <groupId>com.haveitfast.cafe</groupId>
@@ -15,7 +15,7 @@
     <description>Front End Microservice for CafeBB</description>
 
     <properties>
-        <java.version>1.8</java.version>
+        <java.version>19</java.version>
     </properties>
 
     <dependencies>
@@ -65,7 +65,7 @@
             <plugin>
                 <groupId>com.github.eirslett</groupId>
                 <artifactId>frontend-maven-plugin</artifactId>
-                <version>1.6</version>
+                <version>1.12.1</version>
                 <configuration>
                     <workingDirectory>src\main\cafebb-app</workingDirectory>
                     <installDirectory>target</installDirectory>
@@ -77,8 +77,8 @@
                             <goal>install-node-and-npm</goal>
                         </goals>
                         <configuration>
-                            <nodeVersion>v12.14.1</nodeVersion>
-                            <npmVersion>6.13.4</npmVersion>
+                            <nodeVersion>v19.0.1</nodeVersion>
+                            <npmVersion>8.19.2</npmVersion>
                         </configuration>
                     </execution>
                     <execution>
