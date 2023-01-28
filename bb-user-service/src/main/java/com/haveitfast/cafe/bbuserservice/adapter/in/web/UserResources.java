@@ -3,14 +3,13 @@
  * Unauthorized copying of any of the intellectual property by HaveItFast Systems Incorporated is punishable offence under Indian IT act.
  */
 
-package com.haveitfast.cafe.bbuserservice.api;
+package com.haveitfast.cafe.bbuserservice.adapter.in.web;
 
 import java.net.URI;
 import java.util.List;
 
-import com.haveitfast.cafe.bbuserservice.bean.user.User;
-import com.haveitfast.cafe.bbuserservice.service.UserService;
-import com.haveitfast.cafe.bbuserservice.service.impl.UserServiceImpl;
+import com.haveitfast.cafe.bbuserservice.application.domain.User;
+import com.haveitfast.cafe.bbuserservice.application.ports.in.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -68,7 +67,7 @@ public class UserResources {
     @PostMapping("/signup")
     public ResponseEntity<Void> createUser(@RequestBody User user) {
         User userCreate = userService.createUser(user);
-        URI uri = ServletUriComponentsBuilder.fromCurrentRequest().path("{/id}").buildAndExpand(userCreate.getUserId()).toUri();
+        URI uri = ServletUriComponentsBuilder.fromCurrentRequest().path("{/id}").buildAndExpand(userCreate.getId()).toUri();
         return ResponseEntity.created(uri).build();
     }
 }

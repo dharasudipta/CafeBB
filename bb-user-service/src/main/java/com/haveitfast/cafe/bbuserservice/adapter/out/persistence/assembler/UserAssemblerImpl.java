@@ -3,11 +3,10 @@
  * Unauthorized copying of any of the intellectual property by HaveItFast Systems Incorporated is punishable offence under Indian IT act.
  */
 
-package com.haveitfast.cafe.bbuserservice.assembler.impl;
+package com.haveitfast.cafe.bbuserservice.adapter.out.persistence.assembler;
 
-import com.haveitfast.cafe.bbuserservice.assembler.UserAssembler;
-import com.haveitfast.cafe.bbuserservice.bean.user.User;
-import com.haveitfast.cafe.bbuserservice.entity.UserEntity;
+import com.haveitfast.cafe.bbuserservice.application.domain.User;
+import com.haveitfast.cafe.bbuserservice.adapter.out.persistence.entity.UserEntity;
 import org.springframework.stereotype.Component;
 
 @Component
@@ -24,7 +23,7 @@ public class UserAssemblerImpl implements UserAssembler {
         userEntity.setPassword(user.getPassword());
         userEntity.setRole(user.getRole());
         userEntity.setStoreId(user.getStoreId());
-        userEntity.setUserId(user.getUserId());
+        userEntity.setUserId(user.getId());
         userEntity.setUserName(user.getUserName());
         return userEntity;
     }
@@ -33,7 +32,7 @@ public class UserAssemblerImpl implements UserAssembler {
      * @param UserEntity
      * @return
      */
-    public User toUser(UserEntity UserEntity) {
+    public User toUserBean(UserEntity UserEntity) {
         User user = new User();
         user.setContactNumber(UserEntity.getContactNumber());
         user.setEmployeeId(UserEntity.getEmployeeId());
@@ -41,7 +40,7 @@ public class UserAssemblerImpl implements UserAssembler {
         user.setPassword(UserEntity.getPassword());
         user.setRole(UserEntity.getRole());
         user.setStoreId(UserEntity.getStoreId());
-        user.setUserId(UserEntity.getUserId());
+        user.setId(UserEntity.getUserId());
         user.setUserName(UserEntity.getUserName());
         return user;
     }

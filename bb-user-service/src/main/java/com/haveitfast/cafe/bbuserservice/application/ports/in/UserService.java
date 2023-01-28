@@ -3,9 +3,9 @@
  * Unauthorized copying of any of the intellectual property by HaveItFast Systems Incorporated is punishable offence under Indian IT act.
  */
 
-package com.haveitfast.cafe.bbuserservice.service;
+package com.haveitfast.cafe.bbuserservice.application.ports.in;
 
-import com.haveitfast.cafe.bbuserservice.bean.user.User;
+import com.haveitfast.cafe.bbuserservice.application.domain.User;
 
 import java.util.List;
 

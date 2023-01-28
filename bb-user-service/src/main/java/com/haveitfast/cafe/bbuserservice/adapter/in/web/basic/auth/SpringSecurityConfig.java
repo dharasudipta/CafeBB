@@ -1,4 +1,4 @@
-package com.haveitfast.cafe.bbuserservice.basic.auth;
+package com.haveitfast.cafe.bbuserservice.adapter.in.web.basic.auth;
 
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.Customizer;
