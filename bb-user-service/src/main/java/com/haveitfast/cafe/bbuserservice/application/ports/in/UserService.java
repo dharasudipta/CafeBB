@@ -16,11 +16,11 @@ public interface UserService {
 
     public List<User> findAllUserExceptThis(String userId);
 
-    public User findUserById(String userId);
+    public User findUserById(Long userId);
 
-    public String isUserFound(String username, String password);
+    public Long isUserFound(String username, String password);
 
-    public User updateUserDetails(String id, User user);
+    public User updateUserDetails(Long id, User user);
 
-    public User deleteUser(String id);
+    public User deleteUser(Long id);
 }

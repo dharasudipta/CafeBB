@@ -46,19 +46,19 @@ public class UserServiceImpl implements UserService {
     }
 
 
-    public User findUserById(String userId) {
+    public User findUserById(Long userId) {
         return assembler.toUserBean(userDal.findByUserId(userId));
     }
     
 
 
-    public User deleteUser(String userId) {
+    public User deleteUser(Long userId) {
         User deletedUser = findUserById(userId);
         userDal.deleteUser(userId);
         return deletedUser;
     }
 
-    public String isUserFound(String username, String password) {
+    public Long isUserFound(String username, String password) {
         return userDal.isUserFound(username, password);
     }
 
@@ -71,7 +71,7 @@ public class UserServiceImpl implements UserService {
 //        return null;
 //    }
 
-    public User updateUserDetails(String userId, User user) {
+    public User updateUserDetails(Long userId, User user) {
         if (userId != null && !"".equals(userId) && user != null) {
             return assembler.toUserBean(userDal.update(userId, assembler.toUserEntity(user)));
         } else if (userId == null && user != null) {

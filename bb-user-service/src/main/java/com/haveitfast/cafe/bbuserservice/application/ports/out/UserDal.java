@@ -10,17 +10,17 @@ import com.haveitfast.cafe.bbuserservice.adapter.out.persistence.entity.UserEnti
 import java.util.List;
 
 public interface UserDal {
-    public String isUserFound(String username, String password);
+    public Long isUserFound(String username, String password);
 
     public UserEntity save(UserEntity user);
 
     public List<UserEntity> findAll();
 
-    public UserEntity findByUserId(String userId);
+    public UserEntity findByUserId(Long userId);
     
     //public UserEntity findByUserName(String userName);
 
-    public void deleteUser(String userId);
+    public void deleteUser(Long userId);
 
-    public UserEntity update(String userId, UserEntity user);
+    public UserEntity update(Long userId, UserEntity user);
 }

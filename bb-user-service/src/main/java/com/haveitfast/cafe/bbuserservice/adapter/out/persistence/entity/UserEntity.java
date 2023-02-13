@@ -5,85 +5,50 @@
 
 package com.haveitfast.cafe.bbuserservice.adapter.out.persistence.entity;
 
-import org.springframework.data.annotation.Id;
-import org.springframework.data.mongodb.core.mapping.Document;
+import jakarta.persistence.*;
+import jakarta.validation.constraints.NotEmpty;
+import lombok.Getter;
+import lombok.Setter;
 
-
-@Document
+@Entity(name = "user_details")
 public class UserEntity {
 
     @Id
-    private String userId;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Getter
+    @Setter
+    @Column(name = "USER_ID")
+    private Long userId;
+    @Getter
+    @Setter
+    @Column(name = "FULL_NAME")
     private String fullName;
+    @Getter
+    @Setter
+    @Column(name = "CONTACT_NUMBER")
     private String contactNumber;
+    @Getter
+    @Setter
+    @NotEmpty
+    @Column(name = "USER_NAME")
     private String userName;
+    @Getter
+    @Setter
+    @NotEmpty
+    @Column(name = "PASSWORD")
     private String password;
+    @Getter
+    @Setter
+    @Column(name = "ROLE")
     private String role;
+    @Getter
+    @Setter
+    @Column(name = "STORE_ID")
     private String storeId; //OneTo-May
+    @Getter
+    @Setter
+    @Column(name = "EMPLOYEE_ID")
     private String employeeId; //One-To_one
     //userId, fullName, contactNumber, username, password, role, storeId, employeeId
 
-    public String getUserId() {
-        return userId;
-    }
-
-    public void setUserId(String userId) {
-        this.userId = userId;
-    }
-
-    public String getFullName() {
-        return fullName;
-    }
-
-    public void setFullName(String fullName) {
-        this.fullName = fullName;
-    }
-
-    public String getContactNumber() {
-        return contactNumber;
-    }
-
-    public void setContactNumber(String contactNumber) {
-        this.contactNumber = contactNumber;
-    }
-
-    public String getUserName() {
-        return userName;
-    }
-
-    public void setUserName(String userName) {
-        this.userName = userName;
-    }
-
-    public String getPassword() {
-        return password;
-    }
-
-    public void setPassword(String password) {
-        this.password = password;
-    }
-
-    public String getRole() {
-        return role;
-    }
-
-    public void setRole(String role) {
-        this.role = role;
-    }
-
-    public String getStoreId() {
-        return storeId;
-    }
-
-    public void setStoreId(String storeId) {
-        this.storeId = storeId;
-    }
-
-    public String getEmployeeId() {
-        return employeeId;
-    }
-
-    public void setEmployeeId(String employeeId) {
-        this.employeeId = employeeId;
-    }
 }

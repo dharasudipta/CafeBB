@@ -16,7 +16,7 @@ import java.io.Serializable;
 public class User implements Serializable {
     @Getter
     @Setter
-    private String id;
+    private Long id;
     @Getter
     @Setter
     private String fullName;

@@ -4,11 +4,10 @@
  */
 
 package com.haveitfast.cafe.bbuserservice.adapter.out.persistence.repository;
-//
-//import com.haveitfast.cafe.bbuserservice.entity.UserEntity;
-//import org.springframework.data.mongodb.repository.MongoRepository;
-//import org.springframework.stereotype.Repository;
-//
-//@Repository
-//public interface UserRepository extends MongoRepository<UserEntity, String> {
-//}
+
+
+import com.haveitfast.cafe.bbuserservice.adapter.out.persistence.entity.UserEntity;
+import org.springframework.data.jpa.repository.JpaRepository;
+
+public interface UserRepository extends JpaRepository<UserEntity, Long> {
+}

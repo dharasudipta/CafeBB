@@ -18,7 +18,7 @@ import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
 
 @RestController
-@CrossOrigin(origins = "http://localhost:3000")
+@CrossOrigin(origins = "http://localhost:9999")
 @RequestMapping("/user")
 public class UserResources {
     UserService userService;
@@ -39,13 +39,13 @@ public class UserResources {
     }
 
     @GetMapping(path = "/getUser/{username}/{id}")
-    public User getUserById(@PathVariable String username, @PathVariable String id) {
+    public User getUserById(@PathVariable String username, @PathVariable Long id) {
         return userService.findUserById(id);
     }
 
 
     @DeleteMapping("/deleteUser/{username}/user/{id}")
-    public ResponseEntity<Void> deleteUser(@PathVariable String username, @PathVariable String id) {
+    public ResponseEntity<Void> deleteUser(@PathVariable String username, @PathVariable Long id) {
         User userDelete = userService.deleteUser(id);
         if (userDelete != null) {
             return ResponseEntity.noContent().build();
@@ -54,12 +54,12 @@ public class UserResources {
     }
 
     @GetMapping(path = "/authUsers/{username}/user/{password}")
-    public String userAuthentication(@PathVariable String username, @PathVariable String password) {
+    public Long userAuthentication(@PathVariable String username, @PathVariable String password) {
         return userService.isUserFound(username, password);
     }
 
     @PutMapping("/usersUpdate/{username}/{id}")
-    public ResponseEntity<User> updateUser(@PathVariable String username, @PathVariable String id, @RequestBody User user) {
+    public ResponseEntity<User> updateUser(@PathVariable String username, @PathVariable Long id, @RequestBody User user) {
         User userUpdate = userService.updateUserDetails(id, user);
         return new ResponseEntity<User>(user, HttpStatus.OK);
     }
