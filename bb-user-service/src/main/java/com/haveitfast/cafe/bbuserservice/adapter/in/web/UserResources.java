@@ -5,9 +5,6 @@
 
 package com.haveitfast.cafe.bbuserservice.adapter.in.web;
 
-import java.net.URI;
-import java.util.List;
-
 import com.haveitfast.cafe.bbuserservice.application.domain.User;
 import com.haveitfast.cafe.bbuserservice.application.ports.in.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,9 +13,12 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
+import java.net.URI;
+import java.util.List;
+
 
 @RestController
-@CrossOrigin(origins = "http://localhost:9999")
+@CrossOrigin(origins = {"http://localhost:9999", "http://localhost:3000"})
 @RequestMapping("/user")
 public class UserResources {
     UserService userService;
@@ -53,9 +53,9 @@ public class UserResources {
         return ResponseEntity.notFound().build();
     }
 
-    @GetMapping(path = "/authUsers/{username}/user/{password}")
-    public Long userAuthentication(@PathVariable String username, @PathVariable String password) {
-        return userService.isUserFound(username, password);
+    @PostMapping(path = "/authUsers")
+    public Long userAuthentication(@RequestBody User user) {
+        return userService.isUserFound(user.getUserName(), user.getPassword());
     }
 
     @PutMapping("/usersUpdate/{username}/{id}")
