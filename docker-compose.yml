@@ -1,0 +1,35 @@
+version: '2'
+services:
+  bb-user-service:
+    build:
+      context: bb-user-service
+      dockerfile: Dockerfile
+    container_name: CafeBB-US-C
+    image: cafebb-us-i
+    ports:
+      - "9003:9003"
+    networks:
+      - cafebb-cloud-network
+  bb-menu-service:
+    build:
+      context: bb-menu-service
+      dockerfile: Dockerfile
+    container_name: CafeBB-MS-C
+    image: cafebb-ms-i
+    ports:
+      - "9002:9002"
+    networks:
+      - cafebb-cloud-network
+  bb-fe-service:
+    build:
+      context: bb-fe-service
+      dockerfile: Dockerfile
+    container_name: CafeBB-FE-C
+    image: cafebb-fe-i
+    ports:
+      - "9999:9999"
+    networks:
+      - cafebb-cloud-network
+networks:
+  cafebb-cloud-network:
+    driver: bridge
