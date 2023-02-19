@@ -21,7 +21,7 @@ name: Deploy Java project to Azure Function App
 on:
   push:
     branches:
-    - ["feature_clean_arch_2023"]
+    - ["master"]
 
 env:
   AZURE_FUNCTIONAPP_NAME: 'CafeBB'   # set this to your function app name on Azure
