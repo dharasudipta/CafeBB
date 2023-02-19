@@ -3,18 +3,18 @@
  * Unauthorized copying of any of the intellectual property by HaveItFast Systems Incorporated is punishable offence under Indian IT act.
  */
 
-package com.haveitfast.cafe.bbmenuservice.assembler.impl;
+package com.haveitfast.cafe.bbmenuservice.adapter.out.persistence.assembler.impl;
 
+import com.haveitfast.cafe.bbmenuservice.adapter.out.persistence.assembler.MenuAssembler;
 import org.springframework.stereotype.Component;
 
-import com.haveitfast.cafe.bbmenuservice.assembler.MenuAssembler;
-import com.haveitfast.cafe.bbmenuservice.bean.menu.Menu;
-import com.haveitfast.cafe.bbmenuservice.entity.MenuEntity;
+import com.haveitfast.cafe.bbmenuservice.application.domain.Menu;
+import com.haveitfast.cafe.bbmenuservice.adapter.out.persistence.entity.MenuEntity;
 
 @Component
 public class MenuAssemblerImpl implements MenuAssembler {
     /**
-     * @param user
+     * @param menu
      * @return
      */
     public MenuEntity toMenuEntity(Menu menu) {
@@ -29,7 +29,7 @@ public class MenuAssemblerImpl implements MenuAssembler {
     }
 
     /**
-     * @param UserEntity
+     * @param menuEntity
      * @return
      */
     public Menu toMenu(MenuEntity menuEntity) {

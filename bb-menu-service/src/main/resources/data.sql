@@ -1,0 +1,6 @@
+insert into menu_details(MENU_ID, MENU_NAME, PRICE, STATUS, PICTURE_PATH, DESCRIPTION)values (1001, 'Cheese Burger', '24.99', 'true', '', 'Burger with beef patty');
+insert into menu_details(MENU_ID, MENU_NAME, PRICE, STATUS, PICTURE_PATH, DESCRIPTION) values(1002,'Burger Meal','40.99','true','','Burger Meal with Medium French Fry and Drinks of your choice');
+insert into menu_details(MENU_ID, MENU_NAME, PRICE, STATUS, PICTURE_PATH, DESCRIPTION) values(1003,'Vegge Sandwitch','19.99','true','','Vegge Sandwith');
+insert into menu_details(MENU_ID, MENU_NAME, PRICE, STATUS, PICTURE_PATH, DESCRIPTION) values(1004,'All day Breakfast','51.99','true','','English breakfast with Butter Toasts, Baked Beans, English Sausage, Sunny side up, Butter Fried Mushrooms, Boiled Spinach, Bacon');
+insert into menu_details(MENU_ID, MENU_NAME, PRICE, STATUS, PICTURE_PATH, DESCRIPTION) values(1005,'Special Salad','15.99','true','','Healthy salad for fitness enthusiasts');
+insert into menu_details(MENU_ID, MENU_NAME, PRICE, STATUS, PICTURE_PATH, DESCRIPTION) values(1006,'Special Desert','9.99','true','','Cafe special Ice Cream desert.');

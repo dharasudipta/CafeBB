@@ -3,12 +3,12 @@
  * Unauthorized copying of any of the intellectual property by HaveItFast Systems Incorporated is punishable offence under Indian IT act.
  */
 
-package com.haveitfast.cafe.bbmenuservice.dal;
+package com.haveitfast.cafe.bbmenuservice.application.ports.out;
 
 
 import java.util.List;
 
-import com.haveitfast.cafe.bbmenuservice.entity.MenuEntity;
+import com.haveitfast.cafe.bbmenuservice.adapter.out.persistence.entity.MenuEntity;
 
 public interface MenuDal {
 
@@ -16,10 +16,10 @@ public interface MenuDal {
 
     public List<MenuEntity> findAllMenu();
 
-    public MenuEntity findByMenuId(String menuId);
+    public MenuEntity findByMenuId(Long menuId);
 
-    public void deleteMenu(String menuId);
+    public void deleteMenu(Long menuId);
 
-    public MenuEntity update(String menuId, MenuEntity menu);
+    public MenuEntity update(Long menuId, MenuEntity menu);
 
 }

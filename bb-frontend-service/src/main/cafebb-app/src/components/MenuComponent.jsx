@@ -155,9 +155,11 @@ renderDivs(){
           
       <div  className='addedmenu'  key={Mlist.menuId} id ={Mlist.menuId} style ={{opacity : Mlist.status ? "1" : "0.4" }} >
       <h3 style={{ height : '20px'}} >{Mlist.menuName} {Mlist.enable && <button className='menuPlus' onClick={()=>{this.plusOrder(Mlist.menuId)}}>+</button>} </h3>
+          <br />
+          <h6>{Mlist.description}</h6>
       <hr className='menuline'/><br/>
       
-      <h6 style={{display : 'inline-flex'}}> Rs. {Mlist.menuPrice}</h6>
+      <h6 style={{display : 'inline-flex'}}> EUR. {Mlist.menuPrice}</h6>
       <label className="switch"  >
       {userDetailsHeader &&<input type="checkbox" defaultChecked={!Mlist.status}  onChange={() => { this.enableMenu(Mlist.menuId); }} ></input>}
       {userDetailsHeader && <span className="slider round"></span>}

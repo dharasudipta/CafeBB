@@ -3,12 +3,12 @@
  * Unauthorized copying of any of the intellectual property by HaveItFast Systems Incorporated is punishable offence under Indian IT act.
  */
 
-package com.haveitfast.cafe.bbmenuservice.service.impl;
+package com.haveitfast.cafe.bbmenuservice.application.service;
 
-import com.haveitfast.cafe.bbmenuservice.service.MenuService;
-import com.haveitfast.cafe.bbmenuservice.bean.menu.Menu;
-import com.haveitfast.cafe.bbmenuservice.assembler.MenuAssembler;
-import com.haveitfast.cafe.bbmenuservice.dal.MenuDal;
+import com.haveitfast.cafe.bbmenuservice.application.ports.in.MenuService;
+import com.haveitfast.cafe.bbmenuservice.application.domain.Menu;
+import com.haveitfast.cafe.bbmenuservice.adapter.out.persistence.assembler.MenuAssembler;
+import com.haveitfast.cafe.bbmenuservice.application.ports.out.MenuDal;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -28,7 +28,7 @@ public class MenuServiceImpl implements MenuService {
     }
 
     /**
-     * @param newMenu
+     * @param
      * @return
      */
 	
@@ -39,7 +39,7 @@ public class MenuServiceImpl implements MenuService {
         return menus;
 	}
 	
-	public Menu findMenuById(String menuId) {
+	public Menu findMenuById(Long menuId) {
 		return assembler.toMenu(menuDal.findByMenuId(menuId));
 	}
 	
@@ -48,7 +48,7 @@ public class MenuServiceImpl implements MenuService {
 //		return idCounter;
 //	}
 	
-	public Menu updateMenu(String menuId ,Menu menu) {
+	public Menu updateMenu(Long menuId , Menu menu) {
 		if (menuId != null && !"".equals(menuId) && menu != null) {
             return assembler.toMenu(menuDal.update(menuId, assembler.toMenuEntity(menu)));
         } else if (menuId == null && menu != null) {
@@ -65,13 +65,13 @@ public class MenuServiceImpl implements MenuService {
 		return assembler.toMenu(menuDal.save(assembler.toMenuEntity(newUser)));
 	}
 	
-	public Menu deleteById(String menuId) {
+	public Menu deleteById(Long menuId) {
 		Menu deletedMenu = findMenuById(menuId);
         menuDal.deleteMenu(menuId);
         return deletedMenu;
 		
 	}
-	public boolean findMenuStatus(String menuId) {
+	public boolean findMenuStatus(Long menuId) {
 		Menu x = findMenuById(menuId);
 		return x.isStatus();
 		
