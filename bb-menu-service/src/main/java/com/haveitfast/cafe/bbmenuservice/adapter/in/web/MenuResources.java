@@ -17,7 +17,7 @@ import java.net.URI;
 import java.util.List;
 
 @RestController
-@CrossOrigin(origins = {"http://localhost:3000", "http://localhost:9999"})
+@CrossOrigin(origins = {"http://localhost:3000", "http://localhost:9999","http://193.122.58.27:9999"})
 @RequestMapping("/menu")
 public class MenuResources {
     @Autowired

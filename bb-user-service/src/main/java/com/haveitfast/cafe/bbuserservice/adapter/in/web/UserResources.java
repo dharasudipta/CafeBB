@@ -18,7 +18,7 @@ import java.util.List;
 
 
 @RestController
-@CrossOrigin(origins = {"http://localhost:9999", "http://localhost:3000"})
+@CrossOrigin(origins = {"http://localhost:9999", "http://localhost:3000","http://193.122.58.27:9999"})
 @RequestMapping("/user")
 public class UserResources {
     UserService userService;
