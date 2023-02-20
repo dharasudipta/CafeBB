@@ -3,28 +3,28 @@ import axios from 'axios'
 class MenuDataServices{
     executeGetAllMenu(){
         //console.log("Executed")
-        return axios.get(`http://localhost:9002/menu/menus`)
+        return axios.get(`http://localhost:9991/menu/menus`)
     }
     executeGetMenu(id){
         //console.log("Executed")
-        return axios.get(`http://localhost:9002/menu/menuById/${id}`)
+        return axios.get(`http://localhost:9991/menu/menuById/${id}`)
     }
     // executeGetIdCounter(){
     //     //console.log("Executed")
-    //     return axios.get(`http://localhost:9002/getIdCounter`)
+    //     return axios.get(`http://localhost:9991/getIdCounter`)
     // }
 
     executeGetEnableStatus(id){
         //console.log("Executed")
-        return axios.get(`http://localhost:9002/menu/getEnableStatus/${id}`)
+        return axios.get(`http://localhost:9991/menu/getEnableStatus/${id}`)
     }
     executeCreateMenu(menu){
         //console.log("Executed")
-        return axios.post(`http://localhost:9002/menu/createMenu`,menu);
+        return axios.post(`http://localhost:9991/menu/createMenu`,menu);
     }
     executeEnableStatus(id,menu){
         //console.log("Executed")
-        return axios.put(`http://localhost:9002/menu/updateMenu/${id}`,menu);
+        return axios.put(`http://localhost:9991/menu/updateMenu/${id}`,menu);
     }
 
 }

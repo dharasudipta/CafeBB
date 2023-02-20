@@ -7,7 +7,7 @@ class Test
      }   
      executeBean(){
         //console.log("Executed")
-        return axios.get('http://localhost:9002/menu-bean')
+        return axios.get('http://localhost:9991/menu-bean')
     }
 
     executePath(name){

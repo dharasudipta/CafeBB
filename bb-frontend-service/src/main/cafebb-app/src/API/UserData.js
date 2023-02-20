@@ -10,44 +10,44 @@ class UserData {
 
     executeGetUserByPassword(username, password) {
         //console.log("Executed")
-        return axios.get(`http://localhost:9003/user/getUserByPassword/${username}/${password}`);
+        return axios.get(`http://localhost:9990/user/getUserByPassword/${username}/${password}`);
     }
 
     executeGetUserById(name, id) {
         console.log("Calling executeGetUserById");
         console.log("name:"+name);
         console.log("id:"+id);
-        return axios.get(`http://localhost:9003/user/getUser/${name}/${id}`);
+        return axios.get(`http://localhost:9990/user/getUser/${name}/${id}`);
     }
 
     executeGetAllUserDetailsExceptThis(name, id) {
         //console.log("Executed")
-        return axios.get(`http://localhost:9003/user/${name}/users/${id}`)
+        return axios.get(`http://localhost:9990/user/${name}/users/${id}`)
     }
 
     executeGetAllUserDetails() {
         //console.log("Executed")
-        return axios.get('http://localhost:9003/user/users')
+        return axios.get('http://localhost:9990/user/users')
     }
 
     executeGetValidityOfUser(user) {
         //console.log("Executed")
-        return axios.post('http://localhost:9003/user/authUsers', user);
+        return axios.post('http://localhost:9990/user/authUsers', user);
     }
 
     executeCreateUser(user) {
         //console.log("Executed")
-        return axios.post('http://localhost:9003/user/signup', user);
+        return axios.post('http://localhost:9990/user/signup', user);
     }
 
     executeDeleteUser(username, id) {
         //console.log("Executed")
-        return axios.delete(`http://localhost:9003/user/deleteUser/${username}/user/${id}`);
+        return axios.delete(`http://localhost:9990/user/deleteUser/${username}/user/${id}`);
     }
 
     executeUpdateUser(name, id, user) {
         //console.log("Executed")
-        return axios.put(`http://localhost:9003/user/usersUpdate/${name}/${id}`, user);
+        return axios.put(`http://localhost:9990/user/usersUpdate/${name}/${id}`, user);
     }
 
     // executeGetIdCounter(){
